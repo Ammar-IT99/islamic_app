@@ -7,7 +7,7 @@ import 'package:islamic_app/home/sebha/sebha.dart';
 import 'home/hadeth/hadeth.dart';
 
 class First extends StatefulWidget {
-
+  static const String routeName = 'First_Screen';
   @override
   State<First> createState() => _FirstState();
 }

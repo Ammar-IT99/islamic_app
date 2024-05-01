@@ -29,9 +29,9 @@ class _SuraDetailsScreenState extends State<SuraDetailsScreen> {
       fit: BoxFit.fill,
     ),
     Scaffold(
-    backgroundColor: Colors.transparent,
+
     appBar: AppBar(
-    title:  Text(args.name,style: Theme.of(context).textTheme.titleLarge,) ,
+    title:  Text('${args.name}',style: Theme.of(context).textTheme.titleLarge,) ,
     ),
   body:  verses.isEmpty?
       Center(

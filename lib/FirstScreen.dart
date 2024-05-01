@@ -8,6 +8,8 @@ import 'home/hadeth/hadeth.dart';
 
 class First extends StatefulWidget {
   static const String routeName = 'First_Screen';
+
+  const First({super.key});
   @override
   State<First> createState() => _FirstState();
 }
@@ -28,7 +30,7 @@ class _FirstState extends State<First> {
         Scaffold(
           backgroundColor: Colors.transparent,
           appBar: AppBar(
-            title:  Text('إسلامي',style: Theme.of(context).textTheme.titleLarge,) ,
+            title:  Text('Islami',style: Theme.of(context).textTheme.titleLarge,) ,
           ),
        bottomNavigationBar: Theme(
          data: Theme.of(context).copyWith(

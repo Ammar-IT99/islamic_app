@@ -10,6 +10,7 @@ class ItemHadethName extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return InkWell(
        onTap: (){
          Navigator.of(context).pushNamed(HadethDetailsScreen.routeName,

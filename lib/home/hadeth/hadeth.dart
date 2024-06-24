@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
 import '../../My_Theme.dart';
+import '../../Providers/app_config_provider.dart';
 import 'item_hadth_name.dart';
 
 
@@ -11,30 +14,35 @@ class hadethTap extends StatefulWidget{
 }
 
 class _hadethTapState extends State<hadethTap> {
+
  List<Hadeth> ahadethlist=[];
 
   @override
   Widget build(BuildContext context) {
-
+    var providor= Provider.of<AppConfigProvider>(context);
   if(ahadethlist.isEmpty){
     loadFile();
   }
     return Column(
       children: [
         Center(child: Image.asset('assets/images/hadeth_logo.png')),
-        Divider(color: MyTheme.primarylightColor, thickness: 4),
+        Divider(color:providor.isDarkMode()?
+        MyTheme.yellowColor:
+        MyTheme.primaryLightColor, thickness: 4),
         Text(
-          'Hadeth Name',
+          AppLocalizations.of(context)!.hadeth_name,
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        Divider(color: MyTheme.primarylightColor, thickness: 4),
+        Divider(color: providor.isDarkMode()?
+        MyTheme.yellowColor:
+        MyTheme.primaryLightColor, thickness: 4),
         ahadethlist.isEmpty?
-            Center(child:CircularProgressIndicator(color: MyTheme.primarylightColor,) ,):
+            Center(child:CircularProgressIndicator(color: MyTheme.primaryLightColor,) ,):
         Expanded(
           child: ListView.separated(
             separatorBuilder: (context, index) {
               return Divider(
-                  color: MyTheme.primarylightColor, thickness: 2
+                  color: MyTheme.primaryLightColor, thickness: 2
               );
             },
 

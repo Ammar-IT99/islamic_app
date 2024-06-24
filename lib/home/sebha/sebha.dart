@@ -2,6 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:islamic_app/My_Theme.dart';
+import 'package:provider/provider.dart';
+
+import '../../Providers/app_config_provider.dart';
 class sebhaTap extends StatefulWidget{
   @override
   State<sebhaTap> createState() => _sebhaTapState();
@@ -16,6 +19,7 @@ class _sebhaTapState extends State<sebhaTap> {
 
   @override
   Widget build(BuildContext context) {
+    var providor= Provider.of<AppConfigProvider>(context);
     return
        Column(
         children: [
@@ -27,7 +31,7 @@ class _sebhaTapState extends State<sebhaTap> {
          Container(
                padding: EdgeInsets.symmetric(vertical: 30,horizontal: 30),
              decoration: BoxDecoration(
-               color: MyTheme.primarylightColor,
+               color: MyTheme.primaryLightColor,
                borderRadius: BorderRadius.circular(20)
              ),
              child: Text(counter.toString(), style: Theme.of(context).textTheme.titleMedium,)),
@@ -35,7 +39,7 @@ class _sebhaTapState extends State<sebhaTap> {
              margin:const EdgeInsets.fromLTRB(10, 10, 10,10),
               padding: const EdgeInsets.symmetric(vertical: 10,horizontal: 30),
               decoration: BoxDecoration(
-                  color: MyTheme.primarylightColor,
+                  color: MyTheme.primaryLightColor,
                   borderRadius: BorderRadius.circular(20)
               ),
               child: Text(Zekr[index], style: Theme.of(context).textTheme.titleMedium,)),

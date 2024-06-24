@@ -11,7 +11,7 @@ class ItemSuraDetailsScreen extends StatelessWidget {
     return Text(
       '$name {${index+1}}',
     textAlign: TextAlign.center,
-    style: Theme.of(context).textTheme.titleSmall,);
+    style: Theme.of(context).textTheme.titleMedium,);
   }
 }
 

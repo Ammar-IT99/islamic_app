@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:islamic_app/My_Theme.dart';
+import 'package:islamic_app/Providers/app_config_provider.dart';
 import 'package:islamic_app/home/Quran/item_sura_name.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
+
 
 class QuranTap extends StatelessWidget {
   List<String> Suranames = [
@@ -121,20 +125,27 @@ class QuranTap extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    var providor= Provider.of<AppConfigProvider>(context);
     return Column(
       children: [
         Center(child: Image.asset('assets/images/Quran_logo.png')),
-        Divider(color: MyTheme.primarylightColor, thickness: 4),
+        Divider(color:providor.isDarkMode()?
+            MyTheme.yellowColor:
+             MyTheme.primaryLightColor, thickness: 4),
         Text(
-          'Sura Name',
+          AppLocalizations.of(context)!.sura_name,
           style: Theme.of(context).textTheme.titleMedium,
         ),
-        Divider(color: MyTheme.primarylightColor, thickness: 4),
+        Divider(color: providor.isDarkMode()?
+        MyTheme.yellowColor:
+        MyTheme.primaryLightColor, thickness: 4),
         Expanded(
           child: ListView.separated(
            separatorBuilder: (context, index) {
              return Divider(
-                 color: MyTheme.primarylightColor, thickness: 2
+                 color: providor.isDarkMode()?
+                 MyTheme.yellowColor:
+                 MyTheme.primaryLightColor, thickness: 2
              );
            },
 
